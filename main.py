@@ -25,10 +25,14 @@ while game_status:
     if answer_state == "Exit": # break the loop if the user wants it
         # Crear una nueva lista con los estados que no están en duplicates
         all_states = data.state.to_list()
-        new_states = []
+        #with list comprehensions
+        new_states = [state for state in all_states if state not in duplicates]
+
+        #with a for loop
+        """new_states = []
         for state in all_states:
             if state not in duplicates:
-                new_states.append(state)
+                new_states.append(state)"""
 
         print(new_states)
         new_states = pandas.DataFrame(new_states)
